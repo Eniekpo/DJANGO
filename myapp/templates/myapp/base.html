@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> {% endcomment %}
+    <title>LEGAL MATCH</title>
+  </head>
+  <body>
+       <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a href= "{% url 'index' %}" class="navbar-brand" style="font-size: 2rem; color: #fff">LEGAL MATCH</a>
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link" style="font-size: 1.2rem; color: #fff">REGISTER</a></li>
+          </ul>
+          <div class="navbars-text">
+            <a href="{% url 'login' %}" style="text-decoration: none; color: #fff; font-size: 1.2rem;">LOGIN</a>
+          </div>
+        </div>
+       </nav>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+      {% block content %} 
+      
+       {% comment %} OTHER PAGES GOES HERE {% endcomment %}
+
+      {% endblock content %}
+
+    <!-- Bootstrap 5 JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
+  </body>
+</html>
