@@ -25,7 +25,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <!-- FontAwesome + Title (Left side) -->
                 <div class="col-sm">
-                    <a href="#" class="navbar-brand flex-grow-1 text-center text-light" style="margin-left: 25px;">
+                    <a href="{% url 'index' %}" class="navbar-brand flex-grow-1 text-center text-light" style="margin-left: 25px;">
                         {% block nav-content %}
                         <i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp; CRISPY FORMS
                         {% endblock %}
@@ -34,16 +34,11 @@
                 <!-- Button (Right side) -->
                 <div class="col-sm">
                     {% block nav-btn %}
-                    <a href="#" class="btn btn-sm text-light" id="btn-nav">FORMS</a>
+                    <a href="{% url 'forms' %}" class="text-light" id="btn-nav">FORMS</a>
                     {% endblock %}
                 </div>
             </nav>
         </header>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-
         <!-- ===== Block Content (ROOT) ===== -->
 
         {% block content %} 
