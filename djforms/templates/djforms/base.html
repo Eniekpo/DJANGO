@@ -16,36 +16,31 @@
     <link href={% static "img/logo.ico" %} rel="shortcut icon">
     <!-- Static CSS -->
     <link href={% static "css/style.css" %} rel="stylesheet">
-    <title>{% block title %} CRISPY FORMS{% endblock %}</title>
+    <title>{% block title %} DJANGO TUTORIALS{% endblock %}</title>
 </head>
 <body>
-    <div class="wrapper">
-        <!-- Navbar -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <!-- FontAwesome + Title (Left side) -->
-                <div class="col-sm">
-                    <a href="{% url 'index' %}" class="navbar-brand flex-grow-1 text-center text-light" style="margin-left: 25px;">
-                        {% block nav-content %}
-                        <i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp; CRISPY FORMS
-                        {% endblock %}
-                    </a>
-                </div>
-                <!-- Button (Right side) -->
-                <div class="col-sm">
-                    {% block nav-btn %}
-                    <a href="{% url 'forms' %}" class="navbar-brand flex-grow-1 text-center text-light">FORMS</a>
-                    {% endblock %}
-                </div>
-            </nav>
-        </header>
+     <!-- Navbar  -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-xxl">
+        <a class="navbar-brand fw-bold" href="{% url 'index' %}">YOLE-TECH HUB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+            aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-start align-content-center px-2" id="main-nav">
+            <div class="navbar-nav justify-content-end mx-auto">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">HOME</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'forms' %}">FORMS</a>
+            </div>
+        </div>
+
+    </div>
+</nav><br/><br /><br />
         <!-- ===== Block Content (ROOT) ===== -->
 
         {% block content %} 
         
         {% endblock content %}
-
-    </div> <!-- End // wrapper -->
 
     <!-- Footer -->
     {% comment %} <footer class="bg-dark text-center text-lg-start text-light fixed-bottom" id="footer">
