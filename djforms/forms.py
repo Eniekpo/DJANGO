@@ -66,7 +66,7 @@ class CandidateForm(forms.ModelForm):
         )
     
     message = forms.CharField(
-        min_length=10, 
+        min_length=5, 
         max_length=1000, 
         label='Your Bio', 
          required=False,
@@ -88,7 +88,7 @@ class CandidateForm(forms.ModelForm):
                 attrs={
                     'style': 'font-size: 15px', 
                     'placeholder':'Phone Number',
-                    'data-mask':'(000) 00000-00000'
+                    'data-mask':'(000) 00-0000-0000'
                    }
                 )
             }
