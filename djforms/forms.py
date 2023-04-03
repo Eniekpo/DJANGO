@@ -2,6 +2,16 @@ from django import forms
 from django.core.validators import RegexValidator
 from .models import Candidate
 
+# EVERY LETTERS TO LOWER CASE
+class Lowercase(forms.CharField):
+    def to_python(self, value):
+        return value.lower()
+    
+# EVERY LETTERS TO UPPER CASE
+class Uppercase(forms.CharField):
+    def to_python(self, value):
+        return value.upper()
+
 class CandidateForm(forms.ModelForm):
 
     # VALIDATIONS
@@ -21,7 +31,16 @@ class CandidateForm(forms.ModelForm):
          attrs={'placeholder': 'Last Name'})
         )
     
-    email = forms.CharField(
+    job = Uppercase(
+        min_length=5, max_length=10, label='Job Code', 
+        required=True,
+        widget=forms.TextInput(
+         attrs={
+        'placeholder': 'Example: JB-345',
+        })
+        )
+    
+    email = Lowercase(
         min_length=10, max_length=50, label='Email Address', 
         validators=[RegexValidator(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$', 
                                    message='Put a Valid Email Address !!')],
@@ -61,3 +80,15 @@ class CandidateForm(forms.ModelForm):
         fields = '__all__'
        # exclude = ["firstname", "lastname", "age", "email", "message"]
        # fields = ["firstname", "lastname", "age", "email", "message"]
+
+
+        # Outside Widgets 
+        widgets = {
+            'phone': forms.TextInput(
+                attrs={
+                    'style': 'font-size: 15px', 
+                    'placeholder':'Phone Number',
+                    'data-mask':'(000) 00000-00000'
+                   }
+                )
+            }
